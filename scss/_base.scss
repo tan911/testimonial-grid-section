@@ -1,6 +1,6 @@
 :root {
   --color-moderate-violet: hsl(263, 55%, 52%);
-  --color-grayish-blue: hsl(217, 19%, 35%);
+  --color-dark-grayish-blue: hsl(217, 19%, 35%);
   --color-blackish-blue: hsl(219, 29%, 14%);
   --color-white: hsl(0, 0%, 100%);
   --color-light-gray: hsl(0, 0%, 81%);
@@ -9,12 +9,12 @@
 
 @font-face {
   font-family: customFontMedium;
-  src: url("../assets/fonts/BarlowSemiCondensed-Medium.ttf");
+  src: url("../assets/fonts/BarlowSemiCondensed-Medium.woff");
 }
 
 @font-face {
   font-family: customFontBold;
-  src: url("../assets/fonts/BarlowSemiCondensed-SemiBold.ttf");
+  src: url("../assets/fonts/BarlowSemiCondensed-SemiBold.woff");
 }
 
 body {
@@ -23,4 +23,64 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 68.75rem;
+  // background-color: white;
+}
+
+.testimonial__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+img {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  // border: 2px solid var(--color-grayish-blue);
+}
+
+.testimonial__info {
+  color: var(--color-grayish-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial__name {
+  font-size: 0.875rem;
+}
+
+.testimonial__verified {
+  font-size: 0.813rem;
+  opacity: 50%;
+}
+
+.testimonial__reviews {
+  color: var(--color-white);
+}
+
+.testimonial__reviews__highlighted {
+  font-size: 1.2rem;
+  font-family: customFontBold, sans-serif;
+  margin: 0.5em 0;
+}
+
+.testimonial__reviews__opac {
+  font-size: 0.813rem;
+  opacity: 70%;
+}
+
+// 3 - 4
+.text__info {
+  color: var(--color-dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+.text__reviews {
+  color: var(--color-dark-grayish-blue);
 }

@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  grid-template-rows: 18.75rem 17.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.testimonial {
+  background-color: orange;
+  //   padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+
+  &--1 {
+    background-color: var(--color-moderate-violet);
+    background-image: url("../assets/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position-x: 350px;
+    grid-column: 1 / span 2;
+  }
+
+  &--2 {
+    background-color: var(--color-dark-grayish-blue);
+  }
+
+  &--3 {
+    background-color: var(--color-white);
+    grid-row: 1 / -1;
+    grid-column: 4 / -1;
+  }
+
+  &--4 {
+    background-color: var(--color-white);
+  }
+
+  &--5 {
+    background-color: var(--color-blackish-blue);
+    grid-row: 2 / 3;
+    grid-column: 2 / span 2;
+  }
+}
