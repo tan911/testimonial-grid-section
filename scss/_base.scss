@@ -5,6 +5,20 @@
   --color-white: hsl(0, 0%, 100%);
   --color-light-gray: hsl(0, 0%, 81%);
   --color-grayish-blue: hsl(210, 46%, 95%);
+  --border-moderate-violet: hsl(263, 87%, 69%);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop-portrait {
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop-landscape {
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
 }
 
 @font-face {
@@ -26,9 +40,13 @@ body {
 }
 
 main {
-  width: 100%;
+  width: 90%;
   max-width: 68.75rem;
-  // background-color: white;
+  margin: 4rem 0;
+
+  @include respond(laptop-landscape) {
+    width: 100%;
+  }
 }
 
 .testimonial__profile {
@@ -39,15 +57,28 @@ main {
 
 img {
   border-radius: 100%;
-  width: 30px;
-  height: 30px;
-  // border: 2px solid var(--color-grayish-blue);
+  width: 40px;
+  height: 40px;
+
+  @include respond(laptop-landscape) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.rounded {
+  border: 3px solid var(--border-moderate-violet);
+
+  @include respond(laptop-landscape) {
+    border-width: 2px;
+  }
 }
 
 .testimonial__info {
   color: var(--color-grayish-blue);
   display: flex;
   flex-direction: column;
+  line-height: 17px;
 }
 
 .testimonial__name {
@@ -64,9 +95,9 @@ img {
 }
 
 .testimonial__reviews__highlighted {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-family: customFontBold, sans-serif;
-  margin: 0.5em 0;
+  line-height: 25px;
 }
 
 .testimonial__reviews__opac {
@@ -79,6 +110,7 @@ img {
   color: var(--color-dark-grayish-blue);
   display: flex;
   flex-direction: column;
+  line-height: 17px;
 }
 
 .text__reviews {

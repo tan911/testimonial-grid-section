@@ -1,23 +1,44 @@
+@use "./base" as respond;
+
 .grid {
   display: grid;
-  grid-template-rows: 18.75rem 17.5rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
+
+  @include respond.respond(laptop-portrait) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond.respond(laptop-landscape) {
+    grid-template-rows: repeat(2, 18.125rem);
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .testimonial {
-  background-color: orange;
-  //   padding: 1.5rem 2.5rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  @include respond.respond(laptop-landscape) {
+    padding: 1.5rem 2rem;
+  }
 
   &--1 {
     background-color: var(--color-moderate-violet);
     background-image: url("../assets/images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
-    background-position-x: 350px;
-    grid-column: 1 / span 2;
+    background-position-x: 200px;
+    @include respond.respond(laptop-landscape) {
+      background-position-x: 350px;
+      grid-column: 1 / span 2;
+    }
   }
 
   &--2 {
@@ -26,17 +47,22 @@
 
   &--3 {
     background-color: var(--color-white);
-    grid-row: 1 / -1;
-    grid-column: 4 / -1;
+    @include respond.respond(laptop-landscape) {
+      grid-area: 2 / 1 / 3 / 2;
+    }
   }
 
   &--4 {
-    background-color: var(--color-white);
+    background-color: var(--color-blackish-blue);
+    @include respond.respond(laptop-landscape) {
+      grid-column: 2 / span 2;
+    }
   }
 
   &--5 {
-    background-color: var(--color-blackish-blue);
-    grid-row: 2 / 3;
-    grid-column: 2 / span 2;
+    background-color: var(--color-white);
+    @include respond.respond(laptop-landscape) {
+      grid-area: 1 / 4 / 3 / -1;
+    }
   }
 }
