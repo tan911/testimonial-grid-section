@@ -25,7 +25,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot/Solution.png)
-![](./screenshot/mobile.png)
 
 ### Links
 
@@ -46,7 +45,35 @@ Users should be able to:
 
 ### What I learned
 
-Using the grid to practice my layout skills
+Although this application doesn't have a particularly difficult layout, I had a fun day making it. It was a good opportunity for me to practice using a grid system.
+I've discovered something quite helpful that I may use for my upcoming challenge, which is including the proper semantics when producing my HTML.
+
+This is my code, which has multiple divs. div is merely a container.
+
+```html
+<div>
+  <img />
+  <div>
+    <h2>text</h2>
+    <p>text</p>
+    <p></p>
+  </div>
+  <div></div>
+</div>
+```
+
+and to improve the content of my document, I have to write the right elements into it
+
+```html
+<figure>
+  <figcaption>
+    <img />
+  </figcaption>
+  <blockquote></blockquote>
+</figure>
+```
+
+This is being done with the intention of being able to explain how the structure and content relate to one another.
 
 ### Useful resources
 
